@@ -6,8 +6,13 @@ $transitionTime: 0.3s;
 	padding: 0;
 	box-sizing: border-box;
 }
-body {
+.main-body {
+	overflow: hidden;
+	height: 100vh;
+	width: 100vw;
+	position: relative;
 	font-family: 'Poppins', sans-serif;
+	background-color: #FDFDFD;
 }
 
 nav {
@@ -15,12 +20,13 @@ nav {
 	justify-content: space-around;
 	align-items: center;
 	min-height: 8vh;
-	background-color: #5D4954;
+	background-color: white;
+	border-bottom: 2px solid #6B99A2;
 
 }
 
 .logo {
-	color: rgb(226, 226, 226);
+	color: #6B99A2;
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	font-size: 20px;
@@ -29,10 +35,9 @@ nav {
 .nav-links {
 	display: flex;
 	justify-content: space-around;
-	width: 40%;
-	z-index: 0;
+	width: 50%;
 	a {
-		color: rgb(226, 226, 226);
+		color: #6B99A2;
 		text-decoration: none;
 		letter-spacing: 3px;
 		font-weight: bold;
@@ -46,28 +51,29 @@ nav {
 
 .burger {
 	display: none;
-
+	z-index: 5;
 	div {
 		width: 25px;
 		height: 3px;
 		background-color: rgb(226, 226, 226);
 		margin: 5px;
+		transition: all $transitionTime ease;
 	}
+}
+
+.mobile-nav {
+	display: none;
 }
 
 @media screen and (max-width: 992px) {
 	.nav-links {
-		width: 50%;
+		width: 60%;
 	}
 }
 
 @media screen and (max-width: 768px) {
-	body {
-		overflow-x: hidden;
-	}
 
 	nav {
-		position: relative;
 		justify-content: space-between;
 		height: 55px;
 		transition: position $transitionTime;
@@ -75,38 +81,87 @@ nav {
 		div {
 			margin: 0 10px;
 		}
-
-		&.nav-active {
-			position: unset;
-		}
 	}
 	.nav-links {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		position: absolute;
-		right: 0px;
-		top: 8vh;
-		height: 92vh;
-		width: 40%;
-		text-align: center;
-		background-color: #5D4954;
-		transform: translateX(100%);
-		transition: transform $transitionTime ease-in;
-
-		li {
-			/*opacity: 0;*/
-		}
+		display: none;
 	}
 
+	.mobile-nav {
+		display: flex;
+
+		&__links {
+			display: flex;
+			flex-direction: column;
+			/*justify-content: space-around;*/
+			align-items: center;
+			position: absolute;
+			right: 0px;
+			top: 55px;;
+			height: 100px;
+			width: 100px;
+			text-align: center;
+			background-color: white;
+			border-left: 2px solid #6B99A2;
+			border-radius: 50%;
+			transform: translateX(100%);
+			transition: all $transitionTime ease;
+
+			a {
+				color: #6B99A2;
+				text-decoration: none;
+				letter-spacing: 3px;
+				font-weight: bold;
+				font-size: 18px;
+			}
+
+			li {
+				list-style: none;
+				padding-bottom: 50px;
+			}
+
+			@media (orientation: landscape) {
+				width: 30%;
+
+				li {
+					padding-bottom: 40px;
+				}
+			}
+		}
+
+	}
 	.burger {
 		display: block;
 		cursor: pointer;
+
+		div {
+			background-color: #6B99A2;
+		}
 	}
 }
 
 .nav-links-active {
 	transform: translateX(0%);
+	padding: 150px 100px 0 0;
+	height: 600px;
+  width: 600px;
+  top: -50px;
+  right: -250px;
+
+  @media (orientation: landscape) {
+  	height: 550px;
+  	width: 550px;
+  	padding: 150px 150px 0 0;
+  }
+}
+
+.toggle .line1 {
+	transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+	opacity: 0;
+}
+.toggle .line3 {
+	transform: rotate(45deg) translate(-5px, -6px);
 }
 
 
