@@ -1,5 +1,5 @@
-$test: red;
-$transitionTime: 0.3s;
+$mainFontColor: #17575D;
+$transitionTime: 0.4s;
 
 * {
 	margin: 0;
@@ -11,8 +11,9 @@ $transitionTime: 0.3s;
 	height: 100vh;
 	width: 100vw;
 	position: relative;
-	font-family: 'Poppins', sans-serif;
-	background-color: #FDFDFD;
+	font-family: 'Poiret One', cursive;
+	/*background-color: #D8EDF3;*/
+	background: linear-gradient(to bottom, #0B2C2F 0%, #DCAEBF 100%)
 }
 
 nav {
@@ -20,16 +21,16 @@ nav {
 	justify-content: space-around;
 	align-items: center;
 	min-height: 8vh;
-	background-color: white;
-	border-bottom: 2px solid #6B99A2;
+	background-color: transparent;
+	border-bottom: 3px solid #0B2C2F;
 
 }
 
 .logo {
-	color: #6B99A2;
+	color: white;
 	text-transform: uppercase;
 	letter-spacing: 5px;
-	font-size: 20px;
+	font-size: 26px;
 }
 
 .nav-links {
@@ -37,11 +38,11 @@ nav {
 	justify-content: space-around;
 	width: 50%;
 	a {
-		color: #6B99A2;
+		color: white;
 		text-decoration: none;
 		letter-spacing: 3px;
 		font-weight: bold;
-		font-size: 14px;
+		font-size: 16px;
 	}
 
 	li {
@@ -54,8 +55,8 @@ nav {
 	z-index: 5;
 	div {
 		width: 25px;
-		height: 3px;
-		background-color: rgb(226, 226, 226);
+		height: 2px;
+		background-color: white;
 		margin: 5px;
 		transition: all $transitionTime ease;
 	}
@@ -101,17 +102,17 @@ nav {
 			width: 100px;
 			text-align: center;
 			background-color: white;
-			border-left: 2px solid #6B99A2;
+			border-left: 3px solid #0B2C2F;
 			border-radius: 50%;
 			transform: translateX(100%);
 			transition: all $transitionTime ease;
 
 			a {
-				color: #6B99A2;
+				color: #0B2C2F;
 				text-decoration: none;
 				letter-spacing: 3px;
 				font-weight: bold;
-				font-size: 18px;
+				font-size: 20px;
 			}
 
 			li {
@@ -134,34 +135,62 @@ nav {
 		cursor: pointer;
 
 		div {
-			background-color: #6B99A2;
+			background-color: white;
 		}
 	}
 }
 
 .nav-links-active {
 	transform: translateX(0%);
-	padding: 150px 100px 0 0;
-	height: 600px;
-  width: 600px;
+	padding: 125px 100px 0 0;
+	height: 550px;
+  width: 550px;
   top: -50px;
-  right: -250px;
+  right: -225px;
 
   @media (orientation: landscape) {
   	height: 550px;
   	width: 550px;
-  	padding: 150px 150px 0 0;
+  	padding: 100px 100px 0 0;
   }
 }
 
 .toggle .line1 {
+	height: 3px;
+	background-color: $mainFontColor;
 	transform: rotate(-45deg) translate(-5px, 6px);
 }
 .toggle .line2 {
 	opacity: 0;
 }
 .toggle .line3 {
+	height: 3px;
+	background-color: $mainFontColor;
 	transform: rotate(45deg) translate(-5px, -6px);
 }
 
+.about {
+	width: 100%;
+  font-size: 30px;
+  color: white;
+  padding: 30px 70px;
+
+  @media screen and (max-width: 768px) {
+	  font-size: 20px;
+	  padding: 10px 30px;
+  }
+}
+
+.about-header {
+	width: 100%;
+  font-size: 34px;
+  color: white;
+  padding: 30px 70px 0;
+  text-align: center;
+
+  @media screen and (max-width: 768px) {
+	  font-size: 24px;
+  	padding: 15px 70px;
+  }
+}
 
