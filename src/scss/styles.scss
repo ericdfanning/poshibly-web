@@ -1,19 +1,26 @@
 $mainFontColor: #17575D;
 $transitionTime: 0.4s;
-
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
-.main-body {
-	overflow: hidden;
-	height: 100vh;
-	width: 100vw;
-	position: relative;
-	font-family: 'Poiret One', cursive;
-	/*background-color: #D8EDF3;*/
-	background: linear-gradient(to bottom, #0B2C2F 0%, #DCAEBF 100%)
+
+.main {
+	&-body {
+		overflow-x: hidden;
+		position: relative;
+		font-family: 'Poiret One', serif;
+		/*background-color: #D8EDF3;*/
+		background: linear-gradient(to bottom, #0B2C2F 0%, #DCAEBF 100%)
+	}
+	
+	&-content {
+		overflow-y: scroll;
+		height: 100%;
+		width: 100%;
+	}
 }
 
 nav {
@@ -21,9 +28,11 @@ nav {
 	justify-content: space-around;
 	align-items: center;
 	min-height: 8vh;
-	background-color: transparent;
+	background-color: #0C3337;
 	border-bottom: 3px solid #0B2C2F;
-
+	top: 0;
+	position: fixed;
+	width: 100%;
 }
 
 .logo {
@@ -31,6 +40,27 @@ nav {
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	font-size: 26px;
+}
+
+.footer-get-it {
+	@media screen and (max-width: 992px) {
+		width: 75px;
+		height: 35px;
+		border: 2px solid $mainFontColor;
+		text-align: center;
+		background-color: transparent;
+		position: fixed;
+		float: right;
+		bottom: 0;
+		right: 0;
+		margin: 10px;
+		text-decoration: none;
+		color: $mainFontColor;
+		font-size: medium;
+		&:focus {
+			outline: none;
+		}
+	}
 }
 
 .nav-links {
@@ -53,13 +83,35 @@ nav {
 .burger {
 	display: none;
 	z-index: 5;
-	div {
-		width: 25px;
-		height: 2px;
-		background-color: white;
-		margin: 5px;
-		transition: all $transitionTime ease;
+	width: 100%;
+	justify-content: flex-end;
+	margin: 0;
+	.lines {
+		margin: 0;
+		background-color: transparent;
+		.line1,.line2,.line3 {
+			width: 25px;
+			height: 2px;
+			background-color: white;
+			margin: 5px;
+			transition: all $transitionTime ease;
+		}
 	}
+
+}
+
+.toggle .lines .line1 {
+	height: 3px;
+	background-color: $mainFontColor;
+	transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .lines .line2 {
+	opacity: 0;
+}
+.toggle .lines .line3 {
+	height: 3px;
+	background-color: $mainFontColor;
+	transform: rotate(45deg) translate(-5px, -6px);
 }
 
 .mobile-nav {
@@ -131,7 +183,7 @@ nav {
 
 	}
 	.burger {
-		display: block;
+		display: flex;
 		cursor: pointer;
 
 		div {
@@ -155,21 +207,7 @@ nav {
   }
 }
 
-.toggle .line1 {
-	height: 3px;
-	background-color: $mainFontColor;
-	transform: rotate(-45deg) translate(-5px, 6px);
-}
-.toggle .line2 {
-	opacity: 0;
-}
-.toggle .line3 {
-	height: 3px;
-	background-color: $mainFontColor;
-	transform: rotate(45deg) translate(-5px, -6px);
-}
-
-.about {
+.section {
 	width: 100%;
   font-size: 30px;
   color: white;
@@ -185,12 +223,12 @@ nav {
 	width: 100%;
   font-size: 34px;
   color: white;
-  padding: 30px 70px 0;
+  padding: 85px 70px 0;
   text-align: center;
 
   @media screen and (max-width: 768px) {
 	  font-size: 24px;
-  	padding: 15px 70px;
+  	padding: 85px 50px 20px;
   }
 }
 
