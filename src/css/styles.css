@@ -95,8 +95,11 @@ nav {
 
 .card-container {
   display: flex;
-  margin: 60px 0 30px 0; }
-  .card-container img {
+  margin: 50px 0 25px 0; }
+  @media screen and (max-width: 768px) {
+    .card-container {
+      margin: 25px 0 12.5px 0; } }
+  .card-container .card-image img {
     width: auto;
     height: auto;
     /*border: 1px solid $mainFontColor;*/
@@ -104,6 +107,13 @@ nav {
     border-radius: 5px;
     float: right;
     margin: 35px 30px; }
+    @media screen and (max-width: 768px) {
+      .card-container .card-image img {
+        width: 100%;
+        margin: 35px 0; } }
+  @media screen and (max-width: 768px) {
+    .card-container .card-image {
+      order: 2; } }
   .card-container .card {
     display: flex;
     justify-content: space-around;
@@ -121,6 +131,19 @@ nav {
         flex-direction: column;
         justify-content: none;
         margin: 40px auto 20px auto; } }
+  .card-container .section {
+    width: 100%;
+    font-size: 16px;
+    color: black;
+    padding: 30px 70px;
+    font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+    line-height: 1.5; }
+    .card-container .section h1 {
+      font-family: "Poiret One", serif; }
+    @media screen and (max-width: 768px) {
+      .card-container .section {
+        font-size: 20px;
+        padding: 10px; } }
 
 .logo {
   color: white;
@@ -133,23 +156,26 @@ nav {
     letter-spacing: 5px;
     font-size: 60px; }
 
-@media screen and (max-width: 992px) {
-  .footer-get-it {
-    width: 75px;
-    height: 35px;
-    border: 2px solid #17575D;
-    text-align: center;
-    background-color: transparent;
-    position: fixed;
-    float: right;
-    bottom: 0;
-    right: 0;
-    margin: 10px;
-    text-decoration: none;
-    color: #17575D;
-    font-size: medium; }
-    .footer-get-it:focus {
-      outline: none; } }
+.footer-get-it {
+  display: none; }
+  @media screen and (max-width: 992px) {
+    .footer-get-it {
+      display: block;
+      width: 75px;
+      height: 35px;
+      border: 2px solid #17575D;
+      text-align: center;
+      background-color: transparent;
+      position: fixed;
+      float: right;
+      bottom: 0;
+      right: 0;
+      margin: 10px;
+      text-decoration: none;
+      color: #17575D;
+      font-size: medium; }
+      .footer-get-it:focus {
+        outline: none; } }
 
 .nav-links {
   display: flex;
@@ -261,17 +287,3 @@ nav {
       height: 550px;
       width: 550px;
       padding: 100px 100px 0 0; } }
-
-.section {
-  width: 100%;
-  font-size: 16px;
-  color: black;
-  padding: 30px 70px;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.5; }
-  .section h1 {
-    font-family: "Poiret One", serif; }
-  @media screen and (max-width: 768px) {
-    .section {
-      font-size: 20px;
-      padding: 10px 30px; } }

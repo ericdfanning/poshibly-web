@@ -2,7 +2,7 @@ const burger = document.querySelector('.burger');
 const navLinks = document.querySelector('.mobile-nav__links');
 const bodyExcludingMenu = document.querySelector('.main-content');
 const menuItemsMobile = document.querySelectorAll('ul.mobile-nav__links li');
-const featureNavLinkDesktop = document.querySelector('#Features');
+const featureNavLink = document.querySelector('#Features');
 const moreBelowCaret = document.querySelector('.more-below-caret__elm');
 const whatIsItSection = document.querySelector('.what-is-it');
 const featuresSection = document.querySelector('.features');
@@ -16,6 +16,7 @@ const navSlide = () => {
 	});
 
 	bodyExcludingMenu.addEventListener('click', () => {
+		console.log('is the close anywhere firing???')
 		closeMenu();
 	});
 
@@ -36,7 +37,8 @@ const initEventListeners = () => {
 		whatIsItSection.scrollIntoView();
 	})
 
-	featureNavLinkDesktop.addEventListener('click', () => {
+	featureNavLink.addEventListener('click', () => {
+		console.log('is it firing?')
 		featuresSection.scrollIntoView();
 	})
 }
