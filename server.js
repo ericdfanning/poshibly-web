@@ -25,3 +25,11 @@ app.get('/', function(req, res) {
   res.status(200)
   res.send()
 })
+
+app.get('/main-menu.png', function(req, res) {
+	res.sendFile(path.join(__dirname, './main-menu.png'))
+})
+
+app.get('/activelySharing.png', function(req, res) {
+	res.sendFile(path.join(__dirname, './activelySharing.png'))
+})

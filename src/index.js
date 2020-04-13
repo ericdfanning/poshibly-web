@@ -2,6 +2,11 @@ const burger = document.querySelector('.burger');
 const navLinks = document.querySelector('.mobile-nav__links');
 const bodyExcludingMenu = document.querySelector('.main-content');
 const menuItemsMobile = document.querySelectorAll('ul.mobile-nav__links li');
+const featureNavLinkDesktop = document.querySelector('#Features');
+const moreBelowCaret = document.querySelector('.more-below-caret__elm');
+const whatIsItSection = document.querySelector('.what-is-it');
+const featuresSection = document.querySelector('.features');
+
 
 const navSlide = () => {
 
@@ -19,8 +24,6 @@ const navSlide = () => {
 			closeMenu();
 		});
 	}
-
-
 }
 
 const closeMenu = () => {
@@ -28,4 +31,15 @@ const closeMenu = () => {
 	burger.classList.toggle('toggle', false);
 }
 
+const initEventListeners = () => {
+	moreBelowCaret.addEventListener('click', () => {
+		whatIsItSection.scrollIntoView();
+	})
+
+	featureNavLinkDesktop.addEventListener('click', () => {
+		featuresSection.scrollIntoView();
+	})
+}
+
 navSlide();
+initEventListeners();

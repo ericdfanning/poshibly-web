@@ -14,6 +14,14 @@ module.exports = {
       {
         test: /\.(js)$/,
         exclude: /node_modules/
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader"
+          }
+        ]
       }
     ],
   },

@@ -5,13 +5,18 @@
   scroll-behavior: smooth; }
 
 .main-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   overflow-x: hidden;
   position: relative;
   font-family: 'Poiret One', serif;
-  /*background-color: #D8EDF3;*/
-  background: linear-gradient(to bottom, #0B2C2F 0%, #DCAEBF 100%); }
+  /*background-color: #FDFDFD;*/
+  /*background: linear-gradient(to bottom, #0B2C2F 0%, white 100%)*/ }
 
 .main-content {
+  display: flex;
+  flex-direction: column;
   overflow-y: scroll;
   height: 100%;
   width: 100%; }
@@ -21,17 +26,112 @@ nav {
   justify-content: space-around;
   align-items: center;
   min-height: 8vh;
-  background-color: #0C3337;
-  border-bottom: 3px solid #0B2C2F;
+  background-color: #17575D;
+  /*border-bottom: 3px solid #0B2C2F;*/
   top: 0;
+  width: 90%;
   position: fixed;
-  width: 100%; }
+  margin: 0 auto; }
+  @media screen and (max-width: 768px) {
+    nav {
+      width: 100%; } }
+
+.about {
+  width: 90%;
+  color: #17575D;
+  background-color: #FDFDFD;
+  height: 500px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  /*background: linear-gradient(to top, white 0%, $mainFontColor 100%);*/ }
+  .about__header {
+    width: 100%;
+    font-size: 44px;
+    color: #17575D;
+    font-weight: 500;
+    padding: 65px;
+    text-align: center; }
+    @media screen and (max-width: 768px) {
+      .about__header {
+        font-size: 30px;
+        margin: 20px auto;
+        padding: 35px 10px; } }
+
+.call-to-action {
+  width: 75%;
+  margin: 0 auto;
+  font-size: 26px; }
+  .call-to-action .more-below-caret {
+    display: flex;
+    justify-content: center; }
+    .call-to-action .more-below-caret__elm {
+      width: 20px;
+      height: 20px;
+      border-bottom: 1px solid black;
+      border-right: 1px solid black;
+      transform: rotate(45deg);
+      cursor: pointer; }
+  .call-to-action .free-trial {
+    margin: 20px 0 20px 0;
+    font-size: 16px;
+    text-align: center; }
+  .call-to-action .get-it-now {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    width: 200px;
+    height: 45px;
+    background-color: #17575D;
+    color: white;
+    margin: 20px auto;
+    cursor: pointer;
+    box-shadow: 1px 1px 2px lightgrey;
+    border-radius: 12px; }
+
+.nav-header__desktop {
+  position: absolute; }
+
+.card-container {
+  display: flex;
+  margin: 60px 0 30px 0; }
+  .card-container img {
+    width: auto;
+    height: auto;
+    /*border: 1px solid $mainFontColor;*/
+    box-shadow: 1px 1px 2px lightgrey;
+    border-radius: 5px;
+    float: right;
+    margin: 35px 30px; }
+  .card-container .card {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin: 50px auto;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .card-container .card h1 {
+      text-align: center;
+      margin-bottom: 20px; }
+    @media screen and (max-width: 768px) {
+      .card-container .card {
+        flex-direction: column;
+        justify-content: none;
+        margin: 40px auto 20px auto; } }
 
 .logo {
   color: white;
   text-transform: uppercase;
   letter-spacing: 5px;
-  font-size: 26px; }
+  font-size: 18px; }
+  .logo-main {
+    color: #17575D;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 60px; }
 
 @media screen and (max-width: 992px) {
   .footer-get-it {
@@ -55,12 +155,12 @@ nav {
   display: flex;
   justify-content: space-around;
   width: 50%; }
-  .nav-links a {
+  .nav-links .nav-button {
     color: white;
     text-decoration: none;
     letter-spacing: 3px;
     font-weight: bold;
-    font-size: 16px; }
+    font-size: 14px; }
   .nav-links li {
     list-style: none; }
 
@@ -123,7 +223,7 @@ nav {
       width: 100px;
       text-align: center;
       background-color: white;
-      border-left: 3px solid #0B2C2F;
+      border-left: 3px solid #17575D;
       border-radius: 50%;
       transform: translateX(100%);
       transition: all 0.4s ease; }
@@ -164,21 +264,14 @@ nav {
 
 .section {
   width: 100%;
-  font-size: 30px;
-  color: white;
-  padding: 30px 70px; }
+  font-size: 16px;
+  color: black;
+  padding: 30px 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5; }
+  .section h1 {
+    font-family: "Poiret One", serif; }
   @media screen and (max-width: 768px) {
     .section {
       font-size: 20px;
       padding: 10px 30px; } }
-
-.about-header {
-  width: 100%;
-  font-size: 34px;
-  color: white;
-  padding: 85px 70px 0;
-  text-align: center; }
-  @media screen and (max-width: 768px) {
-    .about-header {
-      font-size: 24px;
-      padding: 85px 50px 20px; } }
