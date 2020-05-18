@@ -47,10 +47,59 @@ nav {
   }
 }
 
+.nav-header {
+	z-index: 200;
+	&__desktop {
+		position: absolute;
+	}
+}
+
+.legal-stuff {
+	width: 100%;
+	text-align: center;
+	font-size: 14px;
+
+	.privacy-policy, .terms-of-service {
+		margin: 10px;
+		cursor: pointer;
+	}
+}
+
+.privacy-overlay, .terms-of-service-overlay {
+	width: 600px;
+	height: 600px;
+	border: 1.5px solid lightgrey;
+	border-radius: 12px;
+	z-index: -100;
+	position: absolute;
+	background-color: white;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	position: fixed;
+	visibility: hidden;
+
+	.privacy-policy__container {
+		width: 100%;
+		padding: 20px 35px;
+		position: relative;
+	}
+
+	.close-overlay {
+		position: absolute;
+		top: 3px;
+		right: 10px;
+		font-size: 26px;
+		font-family: sans-serif;
+		font-weight: 200;
+		cursor: pointer;
+	}
+}
+
 .about {
 	width: 90%;
 	color: $mainFontColor;
-	background-color: #FDFDFD;
+	background-color: white;
 	height: 500px;
 	margin: 0 auto;
 	display: flex;
@@ -59,11 +108,12 @@ nav {
 
 	&__header {
 		width: 100%;
-	  font-size: 44px;
+	  font-size: 56px;
 	  color: $mainFontColor;
-	  font-weight: 500;
+	  font-weight: bold;
 	  padding: 65px;
 	  text-align: center;
+	  z-index: 100;
 
 	  @media screen and (max-width: 768px) {
 		  font-size: 30px;
@@ -78,7 +128,6 @@ nav {
 }
 
 .call-to-action {
-	width: 75%;
   margin: 0 auto;
   font-size: 26px;
 
@@ -112,37 +161,46 @@ nav {
   	color: white;
   	margin: 20px auto;
   	cursor: pointer;
-  	box-shadow: 1px 1px 2px lightgrey;
   	border-radius: 12px;
+  	transition: transform .2s ease;
+  	&:hover {
+  		transform: translateY(-1px);
+  		box-shadow: 1.5px 1.5px 3px lightgrey;
+  	}
+
+  	&--bottom {
+  		background-color: white;
+  		color: $mainFontColor;
+  		border: 1px solid $mainFontColor;
+  		width: 300px;
+  		height: 55px;
+  	}
   }
 }
-
-.nav-header {
-
-	&__desktop {
-		position: absolute;
-	}
-
-}
-
 
 .card-container {
 	display: flex;
 	margin: 50px 0 25px 0;
+	/*position: relative;*/
+	&:nth-child(even) {
+		/*background-color: $mainFontColor;*/
+	}
 
 	@media screen and (max-width: 768px) {
 		margin: 25px 0 12.5px 0;
 	}
 	.card-image {
+		margin: 35px 30px;
+		min-width: 375px;
 
 		img {
-			width: auto;
-			height: auto;
+			width: 100%;
+			height: 100%;
 			/*border: 1px solid $mainFontColor;*/
 			box-shadow: 1px 1px 2px lightgrey;
-			border-radius: 5px;
+			border-radius: 3px;
 			float: right;
-			margin: 35px 30px;
+
 			@media screen and (max-width: 768px) {
 				width: 100%;
 				margin: 35px 0;
@@ -156,7 +214,6 @@ nav {
 
 	.card {
 		display: flex;
-		justify-content: space-around;
 		width: 90%;
 		margin: 50px auto;
 		font-size: 25px;
@@ -174,15 +231,34 @@ nav {
 	  	margin: 40px auto 20px auto;
 	  }
 
+	  .sub-card {
+	  	display: flex;
+	  	justify-content: space-around;
+
+	  	&__item {
+	  		width: 220px;
+	  		height: 287px;
+	  		box-shadow: 1px 1px 2px lightgrey;
+	  		border-radius: 3px;
+	  		background-color: white;
+	  	}
+	  }
+
 	}
 
 	.section {
 		width: 100%;
 	  font-size: 16px;
 	  color: black;
-	  padding: 30px 70px;
+	  padding: 30px 50px;
 	  font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif; 
 	  line-height: 1.5;
+
+	  &:nth-child(even) {
+	  	color: white;
+	  	padding: 30px 40px;
+	  	line-height: 2.0;
+	  }
 
 	  h1 {
 	  	font-family: $mainFont;
@@ -192,6 +268,141 @@ nav {
 		  font-size: 20px;
 		  padding: 10px;
 	  }
+
+	}
+
+	&-special {
+		background-color: white;
+		border: 1px solid black;
+	}
+
+}
+
+.tilt--one {
+	border: 3px solid lightgrey;
+  height: 250px;
+  width: 250px;
+  background-color: white;
+  border-radius: 2px;
+  top: 162px;
+  transform: rotate(45deg);
+  z-index: 100;
+}
+
+.tilt--two {
+	border: 3px solid lightgrey;
+  height: 315px;
+  width: 315px;
+  /*z-index: 145px;*/
+  background-color: transparent;
+  border-radius: 2px;
+  top: 128px;
+  transform: rotate(45deg);
+  z-index: 90;
+
+  &__child {
+  	border: 1px solid lightgrey;
+  	height: 98%;
+  	width: 98%;
+  	/*margin: 0 auto;*/
+  }
+}
+
+.tilt--three {
+	border: 3px solid lightgrey;
+  height: 448px;
+  width: 90%;
+  /*z-index: 145px;*/
+  background-color: transparent;
+  border-radius: 2px;
+  top: 62px;
+
+  &__child {
+  	border: 1px solid lightgrey;
+  	height: 98%;
+  	width: 99%;
+  	/*margin: 0 auto;*/
+  }
+}
+
+.tilt--four {
+	border: 3px solid lightgrey;
+  height: 50px;
+  width: 265px;
+  /*z-index: 145px;*/
+  background-color: white;
+  border-radius: 2px;
+  top: 91px;
+  z-index: 90;
+
+  &__child {
+  	border: 1px solid lightgrey;
+  	height: 85%;
+  	width: 98%;
+  	/*margin: 0 auto;*/
+  }
+}
+
+.tilt--five {
+	border: 3px solid lightgrey;
+  height: 50px;
+  width: 265px;
+  /*z-index: 145px;*/
+  background-color: white;
+  border-radius: 2px;
+  top: 430px;
+  z-index: 90;
+
+  &__child {
+  	border: 1px solid lightgrey;
+  	height: 85%;
+  	width: 98%;
+  	/*margin: 0 auto;*/
+  }
+}
+
+.tilt--six {
+	border: 3px solid lightgrey;
+  height: 343px;
+  width: 40%;
+  /*z-index: 145px;*/
+  background-color: transparent;
+  border-radius: 2px;
+  top: 116px;
+  z-index: 80;
+
+  &__child {
+  	border: 1px solid lightgrey;
+  	height: 98%;
+  	width: 98%;
+  	/*margin: 0 auto;*/
+  }
+}
+
+
+.deco-line {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&:nth-child(0) {
+
+	}
+	&:nth-child(1) {
+
+	}
+	&:nth-child(2) {
+
+	}
+	&:nth-child(3) {
+
+	}
+	&:nth-child(4) {
+
+	}
+	&:nth-child(5) {
+
 	}
 }
 
@@ -205,19 +416,19 @@ nav {
 		color: $mainFontColor;
 		text-transform: uppercase;
 		letter-spacing: 5px;
-		font-size: 60px;
+		font-size: 80px;
 	}
 }
 
 .footer-get-it {
 	display: none;
 	@media screen and (max-width: 992px) {
-		display: block;
+		display: none;
 		width: 75px;
 		height: 35px;
 		border: 2px solid $mainFontColor;
 		text-align: center;
-		background-color: transparent;
+		background-color: white;
 		position: fixed;
 		float: right;
 		bottom: 0;
@@ -376,4 +587,35 @@ nav {
   }
 }
 
+.price {
+	&__container {
+		width: 100%;
+		height: 100px;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__value {
+		font-size: 24px;
+		color: green;
+		transition: font-size .75s;
+	}
+
+	&__dollar {
+		font-size: 20px;
+		margin-right: -10px;
+    vertical-align: super;
+	}
+
+	&__a-month {
+		margin-left: 5px;
+		margin-top: 18px;
+	}
+}
+
+.animate-price {
+	font-size: 45px;
+}
 
