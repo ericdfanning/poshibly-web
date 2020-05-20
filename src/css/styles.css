@@ -4,6 +4,17 @@
   box-sizing: border-box;
   scroll-behavior: smooth; }
 
+html {
+  position: relative;
+  overflow-x: hidden !important;
+  max-width: 100%;
+  -webkit-text-size-adjust: none; }
+
+body {
+  overflow-x: hidden !important;
+  max-width: 100%;
+  -webkit-text-size-adjust: none; }
+
 .main-body {
   display: flex;
   flex-direction: column;
@@ -18,6 +29,7 @@
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+  overflow-x: hidden;
   height: 100%;
   width: 100%; }
 
@@ -62,6 +74,14 @@ nav {
   transform: translate(-50%, -50%);
   position: fixed;
   visibility: hidden; }
+  @media screen and (max-width: 767px) {
+    .privacy-overlay, .terms-of-service-overlay {
+      width: 300px;
+      height: 350px; } }
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    .privacy-overlay, .terms-of-service-overlay {
+      width: 500px;
+      height: 500px; } }
   .privacy-overlay .privacy-policy__container, .terms-of-service-overlay .privacy-policy__container {
     width: 100%;
     padding: 20px 35px;
@@ -73,10 +93,16 @@ nav {
     font-size: 26px;
     font-family: sans-serif;
     font-weight: 200;
-    cursor: pointer; }
+    cursor: pointer;
+    padding: 5px; }
+    @media screen and (max-width: 768px) {
+      .privacy-overlay .close-overlay, .terms-of-service-overlay .close-overlay {
+        padding: 8px;
+        top: 0;
+        right: 7px; } }
 
 .about {
-  width: 90%;
+  width: 100%;
   color: #17575D;
   background-color: white;
   height: 500px;
@@ -140,7 +166,7 @@ nav {
 
 .card-container {
   display: flex;
-  margin: 50px 0 25px 0;
+  margin: 50px auto 25px;
   /*position: relative;*/ }
   .card-container:nth-child(even) {
     /*background-color: $mainFontColor;*/ }
@@ -150,17 +176,23 @@ nav {
   .card-container .card-image {
     margin: 35px 30px;
     min-width: 375px; }
+    @media screen and (max-width: 768px) {
+      .card-container .card-image {
+        width: 95%;
+        margin: 35px auto;
+        min-width: unset; } }
     .card-container .card-image img {
       width: 100%;
       height: 100%;
       /*border: 1px solid $mainFontColor;*/
-      box-shadow: 1px 1px 2px lightgrey;
+      box-shadow: .75px .75px 1.5px lightgrey;
       border-radius: 3px;
       float: right; }
       @media screen and (max-width: 768px) {
         .card-container .card-image img {
-          width: 100%;
-          margin: 35px 0; } }
+          /*width: 90%;*/
+          float: unset;
+          /*margin: 35px 0;*/ } }
     @media screen and (max-width: 768px) {
       .card-container .card-image {
         order: 2; } }
@@ -197,11 +229,11 @@ nav {
     font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
     line-height: 1.5; }
     .card-container .section:nth-child(even) {
-      color: white;
       padding: 30px 40px;
       line-height: 2.0; }
     .card-container .section h1 {
-      font-family: "Poiret One", serif; }
+      font-family: "Poiret One", serif;
+      font-size: 38px; }
     @media screen and (max-width: 768px) {
       .card-container .section {
         font-size: 20px;
@@ -209,6 +241,9 @@ nav {
   .card-container-special {
     background-color: white;
     border: 1px solid black; }
+    @media screen and (max-width: 768px) {
+      .card-container-special {
+        width: 90%; } }
 
 .tilt--one {
   border: 3px solid lightgrey;
@@ -311,6 +346,9 @@ nav {
     text-transform: uppercase;
     letter-spacing: 5px;
     font-size: 80px; }
+    @media screen and (max-width: 768px) {
+      .logo-main {
+        font-size: 70px; } }
 
 .footer-get-it {
   display: none; }
@@ -443,6 +481,28 @@ nav {
       height: 550px;
       width: 550px;
       padding: 100px 100px 0 0; } }
+
+.chrome-store-logo {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  height: auto;
+  margin: 0 auto 25px; }
+  @media screen and (max-width: 768px) {
+    .chrome-store-logo {
+      width: 75%; } }
+  .chrome-store-logo img {
+    width: auto;
+    height: auto; }
+    @media screen and (max-width: 768px) {
+      .chrome-store-logo img {
+        max-width: 340px;
+        max-height: 96px; } }
+
+@media screen and (min-width: 768px) {
+  .pricing {
+    width: 75%;
+    margin: 0 auto; } }
 
 .price__container {
   width: 100%;

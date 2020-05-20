@@ -35,6 +35,10 @@ app.get('/sharing.png', function(req, res) {
 	res.sendFile(path.join(__dirname, './sharing.png'))
 })
 
+app.get('/ChromeWebStore_Badge_v2_496x150.png', function(req, res) {
+	res.sendFile(path.join(__dirname, './/ChromeWebStore_Badge_v2_496x150.png'))
+})
+
 app.get('/items', function(req, res) {
 
 	fs.readFile('../../../../Desktop/openHAB-state.txt', 'utf8', function(err, data) {
