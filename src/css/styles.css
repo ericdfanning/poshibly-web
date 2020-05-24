@@ -60,6 +60,11 @@ nav {
   .legal-stuff .privacy-policy, .legal-stuff .terms-of-service {
     margin: 10px;
     cursor: pointer; }
+  .legal-stuff__contact {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    color: #17575D; }
 
 .privacy-overlay, .terms-of-service-overlay {
   width: 600px;
@@ -127,6 +132,8 @@ nav {
 .call-to-action {
   margin: 0 auto;
   font-size: 26px; }
+  .call-to-action a {
+    text-decoration: none; }
   .call-to-action .more-below-caret {
     display: flex;
     justify-content: center; }
@@ -221,6 +228,13 @@ nav {
         box-shadow: 1px 1px 2px lightgrey;
         border-radius: 3px;
         background-color: white; }
+    .card-container .card:last-child {
+      margin: 10px auto; }
+      @media screen and (max-width: 768px) {
+        .card-container .card:last-child {
+          flex-direction: column;
+          justify-content: none;
+          margin: 10px auto 10px auto; } }
   .card-container .section {
     width: 100%;
     font-size: 16px;
@@ -231,9 +245,19 @@ nav {
     .card-container .section:nth-child(even) {
       padding: 30px 40px;
       line-height: 2.0; }
+      @media screen and (max-width: 768px) {
+        .card-container .section:nth-child(even) {
+          font-size: 20px;
+          padding: 10px; } }
+    .card-container .section ul {
+      margin: 0 30px; }
     .card-container .section h1 {
       font-family: "Poiret One", serif;
       font-size: 38px; }
+      @media screen and (max-width: 768px) {
+        .card-container .section h1 {
+          font-size: 30px;
+          padding: 10px; } }
     @media screen and (max-width: 768px) {
       .card-container .section {
         font-size: 20px;
@@ -376,6 +400,8 @@ nav {
   justify-content: space-around;
   width: 50%; }
   .nav-links .nav-button {
+    padding: 5px;
+    cursor: pointer;
     color: white;
     text-decoration: none;
     letter-spacing: 3px;
@@ -492,6 +518,7 @@ nav {
     .chrome-store-logo {
       width: 75%; } }
   .chrome-store-logo img {
+    cursor: pointer;
     width: auto;
     height: auto; }
     @media screen and (max-width: 768px) {
@@ -511,6 +538,10 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center; }
+
+.price__free {
+  font-size: 26px;
+  transition: font-size .75s; }
 
 .price__value {
   font-size: 24px;

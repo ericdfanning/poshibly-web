@@ -15,7 +15,7 @@ app.use('/styles.css', function(req, res) {
   res.sendFile(path.join(__dirname, '/src/css/styles.css'))
 });
 
-app.use(express.static(path.join(__dirname, './dist')));
+app.use(express.static(path.join(__dirname, './build')));
 
 app.use(bodyParser.json());
 
@@ -25,6 +25,18 @@ app.get('/', function(req, res) {
 
   res.status(200)
   res.send()
+})
+
+app.get('/poshibly-actively-sharing.png', function(req, res) {
+	res.sendFile(path.join(__dirname, './poshibly-actively-sharing.png'))
+})
+
+app.get('/poshibly-dashboard-options-checked.png', function(req, res) {
+	res.sendFile(path.join(__dirname, './poshibly-dashboard-options-checked.png'))
+})
+
+app.get('/poshibly-free-dashboard-activity-closed.png', function(req, res) {
+	res.sendFile(path.join(__dirname, './poshibly-free-dashboard-activity-closed.png'))
 })
 
 app.get('/main-menu.png', function(req, res) {
