@@ -20,6 +20,7 @@ body {
 	overflow-x: hidden !important;
 	max-width: 100%;
 	-webkit-text-size-adjust: none;
+	background-color: #f8f9fa !important;
 }
 
 .main {
@@ -46,7 +47,7 @@ body {
 
 nav {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
 	min-height: 8vh;
 	background-color: $mainFontColor;
@@ -87,7 +88,9 @@ nav {
 
 .privacy-overlay, .terms-of-service-overlay {
 	width: 600px;
-	height: 600px;
+	height: auto;
+	max-height: 700px;
+	overflow: scroll;
 	border: 1.5px solid lightgrey;
 	border-radius: 12px;
 	z-index: -100;
@@ -101,18 +104,36 @@ nav {
 
 	@media screen and (max-width: 767px) {
 		width: 300px;
-		height: 350px;
+		height: auto;
+		max-height: 500px;
 	}
 
 	@media screen and (min-width: 768px) and (max-width: 992px) {
 		width: 500px;
-		height: 500px;
+		height: auto;
+		max-height: 600px;
 	}
 
-	.privacy-policy__container {
+	.privacy-policy__container, .terms-of-service__container {
 		width: 100%;
 		padding: 20px 35px;
 		position: relative;
+
+		ol {
+			margin-left: 15px;
+		}
+
+		ul {
+			margin-left: 15px;
+		}
+	}
+
+	.privacy-policy__header, .terms-of-service__header {
+		font-size: 16px;
+		font-weight: bold;
+		@media screen and (min-width: 768px) {
+			font-size: 20px;
+		}
 	}
 
 	.close-overlay {
@@ -135,32 +156,52 @@ nav {
 
 .about {
 	width: 100%;
-	color: $mainFontColor;
-	background-color: white;
+	color: white;
+	background-color: $mainFontColor;
 	height: 500px;
 	margin: 0 auto;
 	display: flex;
 	align-items: center;
-	/*background: linear-gradient(to top, white 0%, $mainFontColor 100%);*/
+	justify-content: space-around;
+	
+  @media screen and (max-width: 768px) {
+	  font-size: 22px;
+  	margin: 20px auto;
+  	padding: 15px 5px;
+  	flex-direction: column;
+  }
 
 	&__header {
 		width: 100%;
-	  font-size: 56px;
-	  color: $mainFontColor;
+	  font-size: 36px;
 	  font-weight: bold;
-	  padding: 65px;
+	  padding: 20px;
 	  text-align: center;
 	  z-index: 100;
+	  margin: 0 0 20px 60px;
 
 	  @media screen and (max-width: 768px) {
-		  font-size: 30px;
-	  	margin: 20px auto;
-	  	padding: 35px 10px;
+		  font-size: 22px;
+	  	margin: 20px auto 0;
+	  	padding: 0 5px;
 	  }
 	}
 
 	&__content {
 
+	}
+
+	&__call-to-action {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		padding: 20px;
+		margin-right: 60px;
+
+	  @media screen and (max-width: 768px) {
+	  	margin: 0;
+	  	padding-top: 0;
+	  }
 	}
 }
 
@@ -202,15 +243,15 @@ nav {
   	font-size: 22px;
   	width: 200px;
   	height: 45px;
-  	background-color: $mainFontColor;
-  	color: white;
+  	background-color: white;
+  	color: $mainFontColor;
   	margin: 20px auto;
   	cursor: pointer;
   	border-radius: 12px;
   	transition: transform .2s ease;
   	&:hover {
   		transform: translateY(-1px);
-  		box-shadow: 1.5px 1.5px 3px lightgrey;
+  		box-shadow: 1.5px 1.5px 3px black;
   	}
 
   	&--bottom {
@@ -329,7 +370,7 @@ nav {
 	  h1 {
 	  	font-family: $mainFont;
 	  	font-size: 38px;
-
+	  	font-weight: 500;
   	  @media screen and (max-width: 768px) {
   		  font-size: 30px;
   		  padding: 10px;
@@ -485,13 +526,14 @@ nav {
 	color: white;
 	text-transform: uppercase;
 	letter-spacing: 5px;
-	font-size: 18px;
-
+	font-size: 20px;
+	margin-left: 40px;
 	&-main {
-		color: $mainFontColor;
+		color: white;
 		text-transform: uppercase;
 		letter-spacing: 5px;
 		font-size: 80px;
+		margin-bottom: 10px;
 		@media screen and (max-width: 768px) {
 			font-size: 70px;
 		}
@@ -523,8 +565,9 @@ nav {
 
 .nav-links {
 	display: flex;
-	justify-content: space-around;
+	justify-content: flex-end;
 	width: 50%;
+	margin-left: 40px;
 	.nav-button {
 		padding: 5px;
 		cursor: pointer;
@@ -532,11 +575,16 @@ nav {
 		text-decoration: none;
 		letter-spacing: 3px;
 		font-weight: bold;
-		font-size: 14px;
+		font-size: 16px;
+
+		&__get-it {
+			text-decoration: none;
+		}
 	}
 
 	li {
 		list-style: none;
+		margin-right: 30px;
 	}
 }
 
@@ -605,7 +653,6 @@ nav {
 		&__links {
 			display: flex;
 			flex-direction: column;
-			/*justify-content: space-around;*/
 			align-items: center;
 			position: absolute;
 			right: 0px;
@@ -620,16 +667,16 @@ nav {
 			transition: all $transitionTime ease;
 
 			a {
-				color: #0B2C2F;
 				text-decoration: none;
-				letter-spacing: 3px;
-				font-weight: bold;
-				font-size: 20px;
 			}
 
 			li {
+				color: #0B2C2F;
 				list-style: none;
 				padding-bottom: 50px;
+				letter-spacing: 3px;
+				font-weight: bold;
+				font-size: 20px;
 			}
 
 			@media (orientation: landscape) {
@@ -668,7 +715,7 @@ nav {
 }
 
 .chrome-store-logo {
-	display: flex;
+	display: none;
 	justify-content: center;
 	width: 50%;
 	height: auto;
@@ -683,6 +730,18 @@ nav {
 		@media screen and (max-width: 768px) {
 			max-width: 340px;
 			max-height: 96px;
+		}
+	}
+
+	&--small {
+		@media screen and (max-width: 768px) {
+			display: flex;
+		}
+	}
+
+	&--large {
+		@media screen and (min-width: 768px) {
+			display: flex;
 		}
 	}
 }

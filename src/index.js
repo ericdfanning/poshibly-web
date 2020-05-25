@@ -1,5 +1,6 @@
 const Mustache = require('mustache');
 const pricingOverlayTemplate = require('./templates/pricingOverlay.html');
+const termsOfServiceOverlayTemplate = require('./templates/termsOfServiceOverlay.html');
 const burger = document.querySelector('.burger');
 const navLinks = document.querySelector('.mobile-nav__links');
 const bodyExcludingMenu = document.querySelector('.main-content');
@@ -19,7 +20,6 @@ const contactContainer = document.querySelector('#contact');
 
 
 const navSlide = () => {
-
 	burger.addEventListener('click', () => {
 		navLinks.classList.toggle('nav-links-active');
 		burger.classList.toggle('toggle');
@@ -45,35 +45,26 @@ const initEventListeners = () => {
 	navSlide();
 	initNavLinkListeners();
 
-	moreBelowCaret.addEventListener('click', () => {
-		whatIsItSection.scrollIntoView();
-	})
+	// moreBelowCaret.addEventListener('click', () => {
+	// 	whatIsItSection.scrollIntoView();
+	// })
 
 	privacyPolicy.addEventListener('click', () => {
 		document.querySelector('.privacy-overlay').setAttribute('style', 'z-index: 5000; visibility: visible;');
 		document.querySelector('.main-body').setAttribute('style', 'opacity: 0.2;')
-		let pricingData = { test: 'HELLO DUDES!'}
+		let pricingData = {}
 		let overlayContent = Mustache.render(pricingOverlayTemplate, pricingData)
-		document.querySelector('.privacy-overlay').innerHTML = overlayContent
-		const closeOverlay = document.querySelector('#close-overlay');
-		closeOverlay.addEventListener('click', () => {
-			document.querySelector('.privacy-overlay').setAttribute('style', 'z-index: -100; visibility: hidden;');
-			document.querySelector('.main-body').setAttribute('style', 'opacity: 1;')
-		})
+		document.querySelector('.privacy-overlay').innerHTML = overlayContent;
+		closeOverlayListener();
 	})
 
 	termsOfService.addEventListener('click', () => {
-		const node = document.createElement("DIV");
-		node.setAttribute('class', 'terms-of-service-overlay');
-		const text = document.createTextNode("terms of service overlay");
-		node.appendChild(text)
-	  document.querySelector('body').append(node)
-
-	  const closeOverlay = document.querySelector('#close-overlay');
-	  closeOverlay.addEventListener('click', () => {
-	  	document.querySelector('.privacy-overlay').setAttribute('style', 'z-index: -100; visibility: hidden;');
-	  	document.querySelector('.main-body').setAttribute('style', 'opacity: 1;')
-	  })
+		document.querySelector('.terms-of-service-overlay').setAttribute('style', 'z-index: 5000; visibility: visible;');
+		document.querySelector('.main-body').setAttribute('style', 'opacity: 0.2;')
+		let pricingData = {}
+		let overlayContent = Mustache.render(termsOfServiceOverlayTemplate, pricingData)
+		document.querySelector('.terms-of-service-overlay').innerHTML = overlayContent;
+		closeOverlayListenerTerms();
 	})
 }
 
@@ -98,6 +89,26 @@ const initNavLinkListeners = () => {
 }
 
 initEventListeners();
+
+const closeOverlayListener = () => {
+	const closeOverlay = document.querySelector('#close-overlay');
+	if (closeOverlay) {
+		closeOverlay.addEventListener('click', () => {
+			document.querySelector('.privacy-overlay').setAttribute('style', 'z-index: -100; visibility: hidden;');
+			document.querySelector('.main-body').setAttribute('style', 'opacity: 1;')
+		})
+	}
+}
+const closeOverlayListenerTerms = () => {
+	const closeOverlayTerms = document.querySelector('#close-overlay--terms');
+	if (closeOverlayTerms) {
+		closeOverlayTerms.addEventListener('click', () => {
+			document.querySelector('.terms-of-service-overlay').setAttribute('style', 'z-index: -100; visibility: hidden;');
+			document.querySelector('.main-body').setAttribute('style', 'opacity: 1;')
+		})
+	}
+}
+
 
 // function isElementInViewport (el) {
 
@@ -147,10 +158,25 @@ initEventListeners();
 //     attachEvent('onscroll', handler);
 //     attachEvent('onresize', handler);
 // }
-console.log('FAAAARRRRTTTT')
+
 if (window.location.hash.includes('privacypolicy') || window.location.hash.includes('termsofservice')) {
-	document.querySelector('.privacy-overlay').setAttribute('style', 'z-index: 5000; visibility: visible;');
-	// document.querySelector('.privacy-policy-overlay').setAttribute('z-index', '5000');
+	if (window.location.hash.includes('privacypolicy')) {
+		let privacyOverlay = document.querySelector('.privacy-overlay');
+		privacyOverlay.setAttribute('style', 'z-index: 5000; visibility: visible;');
+		let pricingData = {};
+		let overlayContent = Mustache.render(pricingOverlayTemplate, pricingData);
+		privacyOverlay.innerHTML = overlayContent;
+		closeOverlayListener();
+	}
+
+	if (window.location.hash.includes('termsofservice')) {
+		let termsOverlay = document.querySelector('.terms-of-service-overlay');
+		termsOverlay.setAttribute('style', 'z-index: 5000; visibility: visible;');
+		let pricingData = {};
+		let overlayContent = Mustache.render(termsOfServiceOverlayTemplate, pricingData);
+		termsOverlay.innerHTML = overlayContent;
+		closeOverlayListenerTerms();
+	}
 	document.querySelector('.main-body').setAttribute('style', 'opacity: 0.2;')
 }
 
