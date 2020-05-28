@@ -8,6 +8,8 @@
     "dev": "webpack --watch",
     "start": "nodemon server.js",
     "clean": "rimraf dist",
+    "deploy": "gh-pages -d build",
+    "build": "webpack --mode production",
     "build-dev": "webpack --mode development ./src/index.js --output ./dist/main-dev.js"
   },
   "repository": {

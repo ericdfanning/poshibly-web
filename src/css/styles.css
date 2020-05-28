@@ -282,13 +282,15 @@ nav {
           padding: 10px; } }
     .card-container .section ul {
       margin: 0 30px; }
+    .card-container .section li {
+      font-size: 16px; }
     .card-container .section h1 {
       font-family: "Poiret One", serif;
       font-size: 38px;
       font-weight: 500; }
       @media screen and (max-width: 768px) {
         .card-container .section h1 {
-          font-size: 30px;
+          font-size: 28px;
           padding: 10px; } }
     @media screen and (max-width: 768px) {
       .card-container .section {
@@ -511,7 +513,8 @@ nav {
       transform: translateX(100%);
       transition: all 0.4s ease; }
       .mobile-nav__links a {
-        text-decoration: none; }
+        text-decoration: none;
+        color: #0B2C2F; }
       .mobile-nav__links li {
         color: #0B2C2F;
         list-style: none;

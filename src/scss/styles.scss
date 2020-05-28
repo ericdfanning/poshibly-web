@@ -367,12 +367,16 @@ nav {
 	  	margin: 0 30px;
 	  }
 
+	  li {
+	  	font-size: 16px;
+	  }
+
 	  h1 {
 	  	font-family: $mainFont;
 	  	font-size: 38px;
 	  	font-weight: 500;
   	  @media screen and (max-width: 768px) {
-  		  font-size: 30px;
+  		  font-size: 28px;
   		  padding: 10px;
   	  }
 	  }
@@ -668,6 +672,7 @@ nav {
 
 			a {
 				text-decoration: none;
+				color: #0B2C2F;
 			}
 
 			li {
