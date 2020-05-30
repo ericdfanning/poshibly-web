@@ -242,7 +242,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center; }
-    .card-container .card h1 {
+    .card-container .card h2 {
       text-align: center;
       margin-bottom: 20px; }
     @media screen and (max-width: 768px) {
@@ -284,12 +284,12 @@ nav {
       margin: 0 30px; }
     .card-container .section li {
       font-size: 16px; }
-    .card-container .section h1 {
+    .card-container .section h2 {
       font-family: "Poiret One", serif;
       font-size: 38px;
       font-weight: 500; }
       @media screen and (max-width: 768px) {
-        .card-container .section h1 {
+        .card-container .section h2 {
           font-size: 28px;
           padding: 10px; } }
     @media screen and (max-width: 768px) {
