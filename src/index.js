@@ -18,7 +18,6 @@ const contactNavLinks = document.querySelectorAll('#Contact');
 const contactContainer = document.querySelector('#contact');
 
 
-
 const navSlide = () => {
 	burger.addEventListener('click', () => {
 		navLinks.classList.toggle('nav-links-active');

@@ -9,7 +9,7 @@
     "start": "nodemon server.js",
     "clean": "rimraf dist",
     "deploy": "gh-pages -d build",
-    "build": "webpack --mode production",
+    "build": "webpack --mode production; cp ./src/images/* ./build/images/; cp ./src/css/styles.css ./build/",
     "build-dev": "webpack --mode development ./src/index.js --output ./dist/main-dev.js"
   },
   "repository": {
@@ -35,6 +35,7 @@
     "webpack": "^4.41.2"
   },
   "devDependencies": {
+    "file-loader": "^6.0.0",
     "gh-pages": "^2.2.0",
     "html-webpack-plugin": "^3.2.0",
     "nodemon": "^1.19.4",

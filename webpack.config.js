@@ -7,8 +7,9 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 })
 
 module.exports = {
-
-  entry: './src/index.js',
+  entry: {
+    bundle: './src/index.js'
+  },
   module: {
     rules: [
       {
@@ -27,7 +28,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'build'),
-    filename: 'bundle.js',
+    filename: '[name].js',
     publicPath: '/'
   },
   plugins: [HtmlWebpackPluginConfig],
