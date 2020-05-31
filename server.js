@@ -27,27 +27,27 @@ app.get('/', function(req, res) {
   res.send()
 })
 
-app.get('/poshibly-actively-sharing.png', function(req, res) {
+app.get('/images/poshibly-actively-sharing.png', function(req, res) {
 	res.sendFile(path.join(__dirname, './src/images/poshibly-actively-sharing.png'))
 })
 
-app.get('/poshibly-dashboard-options-checked.png', function(req, res) {
+app.get('/images/poshibly-dashboard-options-checked.png', function(req, res) {
 	res.sendFile(path.join(__dirname, './src/images/poshibly-dashboard-options-checked.png'))
 })
 
-app.get('/poshibly-free-dashboard-activity-closed.png', function(req, res) {
+app.get('/images/poshibly-free-dashboard-activity-closed.png', function(req, res) {
 	res.sendFile(path.join(__dirname, './src/images/poshibly-free-dashboard-activity-closed.png'))
 })
 
-app.get('/ChromeWebStore_BadgeWBorder_v2_206x58.png', function(req, res) {
+app.get('/images/ChromeWebStore_BadgeWBorder_v2_206x58.png', function(req, res) {
 	res.sendFile(path.join(__dirname, './src/images/ChromeWebStore_BadgeWBorder_v2_206x58.png'))
 })
 
-app.get('/ChromeWebStore_BadgeWBorder_v2_340x96.png', function(req, res) {
+app.get('/images/ChromeWebStore_BadgeWBorder_v2_340x96.png', function(req, res) {
 	res.sendFile(path.join(__dirname, './src/images/ChromeWebStore_BadgeWBorder_v2_340x96.png'))
 })
 
-app.get('/Poshibly_Icon.png', function(req, res) {
+app.get('/images/Poshibly_Icon.png', function(req, res) {
 	res.sendFile(path.join(__dirname, './src/images/Poshibly_Icon.png'))
 })
 
