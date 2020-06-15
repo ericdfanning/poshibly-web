@@ -587,7 +587,11 @@ nav {
 
 .price__free {
   font-size: 26px;
-  transition: font-size .75s; }
+  transition: font-size .75s;
+  display: flex;
+  flex-direction: column; }
+  .price__free span {
+    font-size: 16px; }
 
 .price__value {
   font-size: 24px;
