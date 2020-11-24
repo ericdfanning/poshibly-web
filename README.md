@@ -1,2 +1,2 @@
-# poshibly-web
-The website for discovering poshibly bot
+# openHAB Dashboard
+a dashboard. for openHab

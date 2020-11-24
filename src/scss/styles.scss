@@ -771,6 +771,11 @@ nav {
 	&__free {
 		font-size: 26px;
 		transition: font-size .75s;
+		display: flex;
+		flex-direction: column;
+		span {
+			font-size: 16px;
+		}
 	}
 
 	&__value {

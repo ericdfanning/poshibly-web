@@ -158,8 +158,8 @@ const closeOverlayListenerTerms = () => {
 //     attachEvent('onresize', handler);
 // }
 
-if (window.location.hash.includes('privacypolicy') || window.location.hash.includes('termsofservice')) {
-	if (window.location.hash.includes('privacypolicy')) {
+if (window.location.href.includes('?privacypolicy') || window.location.href.includes('?termsofservice')) {
+	if (window.location.href.includes('?privacypolicy')) {
 		let privacyOverlay = document.querySelector('.privacy-overlay');
 		privacyOverlay.setAttribute('style', 'z-index: 5000; visibility: visible;');
 		let pricingData = {};
@@ -168,7 +168,7 @@ if (window.location.hash.includes('privacypolicy') || window.location.hash.inclu
 		closeOverlayListener();
 	}
 
-	if (window.location.hash.includes('termsofservice')) {
+	if (window.location.href.includes('?termsofservice')) {
 		let termsOverlay = document.querySelector('.terms-of-service-overlay');
 		termsOverlay.setAttribute('style', 'z-index: 5000; visibility: visible;');
 		let pricingData = {};
@@ -178,4 +178,3 @@ if (window.location.hash.includes('privacypolicy') || window.location.hash.inclu
 	}
 	document.querySelector('.main-body').setAttribute('style', 'opacity: 0.2;')
 }
-
