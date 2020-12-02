@@ -57,69 +57,29 @@ nav {
 .legal-stuff {
   width: 100%;
   text-align: center;
-  font-size: 14px; }
-  .legal-stuff .privacy-policy, .legal-stuff .terms-of-service {
-    margin: 10px;
-    cursor: pointer; }
+  font-size: 18px; }
   .legal-stuff__contact {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
     color: #17575D; }
 
-.privacy-overlay, .terms-of-service-overlay {
-  width: 600px;
-  height: auto;
-  max-height: 700px;
-  overflow: scroll;
-  border: 1.5px solid lightgrey;
-  border-radius: 12px;
-  z-index: -100;
-  position: absolute;
-  background-color: white;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: fixed;
-  visibility: hidden; }
+.cya-stuff {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  padding: 25px 25px 25px 45px;
+  font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif; }
   @media screen and (max-width: 767px) {
-    .privacy-overlay, .terms-of-service-overlay {
-      width: 300px;
-      height: auto;
-      max-height: 500px; } }
-  @media screen and (min-width: 768px) and (max-width: 992px) {
-    .privacy-overlay, .terms-of-service-overlay {
-      width: 500px;
-      height: auto;
-      max-height: 600px; } }
-  .privacy-overlay .privacy-policy__container, .privacy-overlay .terms-of-service__container, .terms-of-service-overlay .privacy-policy__container, .terms-of-service-overlay .terms-of-service__container {
-    width: 100%;
-    padding: 20px 35px;
-    position: relative; }
-    .privacy-overlay .privacy-policy__container ol, .privacy-overlay .terms-of-service__container ol, .terms-of-service-overlay .privacy-policy__container ol, .terms-of-service-overlay .terms-of-service__container ol {
-      margin-left: 15px; }
-    .privacy-overlay .privacy-policy__container ul, .privacy-overlay .terms-of-service__container ul, .terms-of-service-overlay .privacy-policy__container ul, .terms-of-service-overlay .terms-of-service__container ul {
-      margin-left: 15px; }
-  .privacy-overlay .privacy-policy__header, .privacy-overlay .terms-of-service__header, .terms-of-service-overlay .privacy-policy__header, .terms-of-service-overlay .terms-of-service__header {
-    font-size: 16px;
-    font-weight: bold; }
-    @media screen and (min-width: 768px) {
-      .privacy-overlay .privacy-policy__header, .privacy-overlay .terms-of-service__header, .terms-of-service-overlay .privacy-policy__header, .terms-of-service-overlay .terms-of-service__header {
-        font-size: 20px; } }
-  .privacy-overlay .close-overlay, .terms-of-service-overlay .close-overlay {
-    position: absolute;
-    top: 3px;
-    right: 10px;
-    font-size: 26px;
-    font-family: sans-serif;
-    font-weight: 200;
-    cursor: pointer;
-    padding: 5px; }
-    @media screen and (max-width: 768px) {
-      .privacy-overlay .close-overlay, .terms-of-service-overlay .close-overlay {
-        padding: 8px;
-        top: 0;
-        right: 7px; } }
+    .cya-stuff {
+      padding: 10px; } }
+  .cya-stuff--title {
+    font-family: "Poiret One", serif;
+    font-size: 30px;
+    margin: 10px 0 10px -25px; }
+  .cya-stuff--header {
+    font-weight: bold;
+    font-size: 18px; }
 
 .about {
   width: 100%;
