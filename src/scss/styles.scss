@@ -72,88 +72,45 @@ nav {
 .legal-stuff {
 	width: 100%;
 	text-align: center;
-	font-size: 14px;
-	.privacy-policy, .terms-of-service {
-		margin: 10px;
-		cursor: pointer;
-	}
+	font-size: 18px;
 
 	&__contact {
 		display: flex;
 		justify-content: center;
-		margin-top: 10px;
 		color: $mainFontColor;
 	}
 }
 
-.privacy-overlay, .terms-of-service-overlay {
-	width: 600px;
-	height: auto;
-	max-height: 700px;
-	overflow: scroll;
-	border: 1.5px solid lightgrey;
-	border-radius: 12px;
-	z-index: -100;
-	position: absolute;
-	background-color: white;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	position: fixed;
-	visibility: hidden;
+.cya-stuff {
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	padding: 25px 25px 25px 45px;
+	font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
 
 	@media screen and (max-width: 767px) {
-		width: 300px;
-		height: auto;
-		max-height: 500px;
+		padding: 10px;
 	}
 
-	@media screen and (min-width: 768px) and (max-width: 992px) {
-		width: 500px;
-		height: auto;
-		max-height: 600px;
-	}
+	&--title {
+		font-family: $mainFont;
+		font-size: 30px;
+		margin: 10px 0 10px -25px;
+  }
 
-	.privacy-policy__container, .terms-of-service__container {
-		width: 100%;
-		padding: 20px 35px;
-		position: relative;
-
-		ol {
-			margin-left: 15px;
-		}
-
-		ul {
-			margin-left: 15px;
-		}
-	}
-
-	.privacy-policy__header, .terms-of-service__header {
-		font-size: 16px;
+	&--header {
 		font-weight: bold;
-		@media screen and (min-width: 768px) {
-			font-size: 20px;
-		}
-	}
-
-	.close-overlay {
-		position: absolute;
-		top: 3px;
-		right: 10px;
-		font-size: 26px;
-		font-family: sans-serif;
-		font-weight: 200;
-		cursor: pointer;
-		padding: 5px;
-
-		@media screen and (max-width: 768px) {
-			padding: 8px;
-			top: 0;
-			right: 7px;
-		}
-	}
+		font-size: 18px;
+  }
 }
 
+@media screen and (max-width: 767px) {
+
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+
+}
 .about {
 	width: 100%;
 	color: white;
