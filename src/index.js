@@ -43,28 +43,6 @@ const closeMenu = () => {
 const initEventListeners = () => {
 	navSlide();
 	initNavLinkListeners();
-
-	// moreBelowCaret.addEventListener('click', () => {
-	// 	whatIsItSection.scrollIntoView();
-	// })
-
-	privacyPolicy.addEventListener('click', () => {
-		document.querySelector('.privacy-overlay').setAttribute('style', 'z-index: 5000; visibility: visible;');
-		document.querySelector('.main-body').setAttribute('style', 'opacity: 0.2;')
-		let pricingData = {}
-		let overlayContent = Mustache.render(pricingOverlayTemplate, pricingData)
-		document.querySelector('.privacy-overlay').innerHTML = overlayContent;
-		closeOverlayListener();
-	})
-
-	termsOfService.addEventListener('click', () => {
-		document.querySelector('.terms-of-service-overlay').setAttribute('style', 'z-index: 5000; visibility: visible;');
-		document.querySelector('.main-body').setAttribute('style', 'opacity: 0.2;')
-		let pricingData = {}
-		let overlayContent = Mustache.render(termsOfServiceOverlayTemplate, pricingData)
-		document.querySelector('.terms-of-service-overlay').innerHTML = overlayContent;
-		closeOverlayListenerTerms();
-	})
 }
 
 const initNavLinkListeners = () => {
